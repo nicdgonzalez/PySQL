@@ -1,0 +1,116 @@
+{
+    "\"Nicolas\".\"products\"": {
+        "table_name": "products",
+        "columns": {
+            "0": {
+                "column_name": "product_id",
+                "data_type": "Integer",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": true,
+                    "foreign_key": null,
+                    "default_value": null,
+                    "check": null
+                }
+            },
+            "1": {
+                "column_name": "item_name",
+                "data_type": "Text",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": false,
+                    "foreign_key": null,
+                    "default_value": null,
+                    "check": null
+                }
+            },
+            "2": {
+                "column_name": "price",
+                "data_type": "Numeric",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": false,
+                    "foreign_key": null,
+                    "default_value": null,
+                    "check": "price > 0"
+                }
+            }
+        },
+        "constraints": []
+    },
+    "\"Nicolas\".\"orders\"": {
+        "table_name": "orders",
+        "columns": {
+            "0": {
+                "column_name": "order_id",
+                "data_type": "Integer",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": true,
+                    "foreign_key": null,
+                    "default_value": null,
+                    "check": null
+                }
+            },
+            "1": {
+                "column_name": "shipping_address",
+                "data_type": "Text",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": false,
+                    "foreign_key": null,
+                    "default_value": null,
+                    "check": null
+                }
+            }
+        },
+        "constraints": []
+    },
+    "\"Nicolas\".\"order_items\"": {
+        "table_name": "order_items",
+        "columns": {
+            "0": {
+                "column_name": "product_id",
+                "data_type": "Integer",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": true,
+                    "foreign_key": {
+                        "reference": "REFERENCES \"Nicolas\".\"products\" (product_id)",
+                        "on_delete": null,
+                        "on_update": null
+                    },
+                    "default_value": null,
+                    "check": null
+                }
+            },
+            "1": {
+                "column_name": "order_id",
+                "data_type": "Integer",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": true,
+                    "foreign_key": {
+                        "reference": "REFERENCES \"Nicolas\".\"orders\" (order_id)",
+                        "on_delete": null,
+                        "on_update": null
+                    },
+                    "default_value": null,
+                    "check": null
+                }
+            },
+            "2": {
+                "column_name": "quantity",
+                "data_type": "Integer",
+                "constraints": {
+                    "nullable": true,
+                    "primary_key": false,
+                    "foreign_key": null,
+                    "default_value": null,
+                    "check": "quantity >= 0"
+                }
+            }
+        },
+        "constraints": []
+    }
+}

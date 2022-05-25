@@ -1,0 +1,26 @@
+{
+    "$schema": {
+        "type": "object",
+        "properties": {
+            "db": {
+                "type": "object",
+                "properties": {
+                    "engine": {"type": "string"},
+                    "database": {"type": "string"},
+                    "user": {"type": "string"},
+                    "password": {"type": "string"},
+                    "host": {"type": "string"},
+                    "port": {"type": "string"}
+                }
+            }
+        }
+   },
+    "db": {
+        "engine": "postgresql",
+        "database": "dbname",
+        "user": "user",
+        "password": "password",
+        "host": "localhost",
+        "port": "5000"
+    }
+}

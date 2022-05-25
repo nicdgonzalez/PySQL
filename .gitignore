@@ -1,0 +1,11 @@
+_*
+__pycache__
+venv
+!__init__.py
+!__main__.py
+.vscode
+*.egg-info
+*.copy.*
+config.json
+*.sqlite3
+*.db
