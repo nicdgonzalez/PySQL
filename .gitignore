@@ -9,3 +9,4 @@ venv
 config.json
 *.sqlite3
 *.db
+build*

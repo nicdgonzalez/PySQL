@@ -39,7 +39,7 @@ class Table:
         self.constraints: List[str] = constraints
         self.inherit: Table = inherit
 
-        self.meta.info[self.name] = self._to_metadata()
+        self.meta.info[self.table_name] = self._to_metadata()
 
         return None
 
@@ -85,6 +85,9 @@ class Table:
                 continue
 
             base: str = f'{column.name} {column.data_type.name}'
+
+            if (column.unique):
+                base += ' UNIQUE'
 
             if (column.not_null):
                 base += ' NOT NULL'
