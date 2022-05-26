@@ -39,7 +39,7 @@ class Table:
         self.constraints: List[str] = constraints
         self.inherit: Table = inherit
 
-        self.meta.info[self.name] = self._to_metadata()
+        self.meta.info[self.table_name] = self._to_metadata()
 
         return None
 

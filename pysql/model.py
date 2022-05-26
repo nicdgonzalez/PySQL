@@ -58,10 +58,10 @@ class Model(metaclass=ModelBase):
         cls.table.description = cls.__doc__.strip() if cls.__doc__ else ''
 
         try:
-            cls.meta.tables[cls.table.name]
+            cls.meta.tables[cls.table.table_name]
         except (KeyError,):
             cls.table.create()
-            cls.meta.tables[cls.table.name] = cls.table
+            cls.meta.tables[cls.table.table_name] = cls.table
 
         return None
 
