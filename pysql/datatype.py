@@ -1,6 +1,7 @@
 from typing import List, Tuple
 
 __all__: List[str] = [
+    'BigInt',
     'Blob',
     'Boolean',
     'Char',
@@ -28,6 +29,7 @@ class DataType:
         return None
 
 
+BigInt: DataType = DataType('BigInt')
 Blob: DataType = DataType('Blob')
 Boolean: DataType = DataType('Boolean')
 Char: DataType = lambda n: DataType('Character', n)
