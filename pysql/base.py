@@ -8,6 +8,7 @@ from .query import Query
 
 if TYPE_CHECKING:
     from .metadata import MetaData
+    from .table import Table
 
 __all__: List[str] = [
     'PySQL'
@@ -51,6 +52,10 @@ class PySQL:
         self.query.connection = self.connection
 
         return None
+
+    def get_table(self, __table_name: str, /) -> Table:
+
+        return self.meta.tables[__table_name]
 
     def execute(self, sql: str, /) -> None:
 
