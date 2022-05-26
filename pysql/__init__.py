@@ -1,5 +1,5 @@
 
-__version__: str = '0.1.1'
+__version__: str = '0.1.2'
 
 from .base import PySQL
 from .column import *
