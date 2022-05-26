@@ -33,6 +33,7 @@ class Column:
         *,
         name: str = None,
         data_type: DataType = None,
+        unique: bool = False,
         not_null: bool = False,
         primary_key: bool = False,
         reference: Optional[Column] = None,
@@ -70,6 +71,7 @@ class Column:
 
         self.name: str = name
         self.data_type: DataType = data_type
+        self.unique: bool = unique
         self.not_null: bool = not_null
         self.primary_key: bool = primary_key
         self.reference: ForeignKey = reference

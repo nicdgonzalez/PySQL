@@ -86,6 +86,9 @@ class Table:
 
             base: str = f'{column.name} {column.data_type.name}'
 
+            if (column.unique):
+                base += ' UNIQUE'
+
             if (column.not_null):
                 base += ' NOT NULL'
 
